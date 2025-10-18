@@ -18,7 +18,7 @@ variables:
   PROJECT_JAR_NAME: "${PROJECT_NAME}${PROJECT_VERSION}.jar"
   PROJECT_DOCKER_IMAGE: "${PROJECT_NAME}${PROJECT_VERSION}"
   BUILD_AND_TEST_IMAGE: "maven:3.9.11-eclipse-temurin-$PROJECT_JAVA_VERSION-alpine"
-  DOCKER_HOST: "tcp://localhost:2375/"
+  DOCKER_HOST: "unix:///var/run/docker.sock"
   # MAVEN_CLI_OPTS: "-s .m2/settings.xml --batch-mode"
   # MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
 
