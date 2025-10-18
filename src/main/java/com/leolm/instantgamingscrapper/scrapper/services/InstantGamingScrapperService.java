@@ -6,6 +6,7 @@ import java.util.Objects;
 import org.openqa.selenium.WebDriver;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import com.leolm.instantgamingscrapper.scrapper.factories.DriverFactory;
@@ -27,7 +28,8 @@ public class InstantGamingScrapperService {
         this.driverFactory = driverFactory;
     }
 
-    @EventListener(ApplicationReadyEvent.class)
+    // @EventListener(ApplicationReadyEvent.class)
+    @Scheduled(cron = "0 0/1 * * * *")
     public void run() throws InterruptedException {
         System.out.println("HELLO");
         String nomeInteresse = "Red Dead";

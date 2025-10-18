@@ -10,8 +10,8 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.leolm</groupId>
-	<artifactId>instant-gaming-scrapper</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>${PROJECT_NAME:instant-gaming-scrapper}</artifactId>
+	<version>${PROJECT_VERSION:0.0.1-SNAPSHOT}</version>
 	<name>instant-gaming-scrapper</name>
 	<description>Instant Gaming Pricing Scrapper</description>
 	<url />
