@@ -22,7 +22,7 @@ variables:
 
 build_jar_job:
   stage: build-jar
-  image: "maven:3.8-openjdk-$PROJECT_JAVA_VERSION"
+  image: "3.9.11-eclipse-temurin-$PROJECT_JAVA_VERSION-alpine"
   script:
     - echo "Building the project..."
     - mvn clean install -DskipTests
