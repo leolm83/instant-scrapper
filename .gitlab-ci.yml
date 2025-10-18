@@ -1,3 +1,11 @@
+stages:
+  - build-jar
+  - test-jar
+  - build-image
+  - test
+  - deploy
+
+
 # image: maven:latest
 
 variables:
