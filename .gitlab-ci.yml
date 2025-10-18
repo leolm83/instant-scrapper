@@ -12,6 +12,7 @@ default:
 # image: maven:latest
 
 variables:
+  PROJECT_JAVA_VERSION: 21
   PROJECT_NAME: "instant-gaming-scrapper"
   PROJECT_VERSION: $CI_COMMIT_TAG
   PROJECT_JAR_NAME: "${PROJECT_NAME}${PROJECT_VERSION}.jar"
@@ -21,7 +22,7 @@ variables:
 
 build_jar_job:
   stage: build-jar
-  image: maven:3.8-openjdk-17
+  image: "maven:3.8-openjdk-$PROJECT_JAVA_VERSION"
   script:
     - echo "Building the project..."
     - mvn clean install -DskipTests
