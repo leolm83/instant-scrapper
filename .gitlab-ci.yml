@@ -46,6 +46,9 @@ build-image:
     - docker run "${PROJECT_DOCKER_IMAGE}"
   rules:
     -  if: '$CI_COMMIT_TAG'
+  needs:
+    - job: build_jar_job
+      artifacts: true
   dependencies:
     - build_jar_job
 test_job:
