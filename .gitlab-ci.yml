@@ -28,19 +28,12 @@ build_jar_job:
   script:
     - echo "Building the project..."
     - mvn clean install -DskipTests
+    - ls -lah
   artifacts:
     paths:
       - target/*.jar # Save the compiled JAR as an artifact
       - docker/
     expire_in: 10 mins
-  rules:
-    -  if: '$CI_COMMIT_TAG'
-test_job:
-  stage: test-jar
-  image: ${BUILD_AND_TEST_IMAGE}
-  script:
-    - echo "Running tests..."
-    - mvn test # Run unit and integration tests
   rules:
     -  if: '$CI_COMMIT_TAG'
 build-image:
@@ -54,7 +47,17 @@ build-image:
   rules:
     -  if: '$CI_COMMIT_TAG'
   dependencies:
-    - build-jar
+    - build_jar_job
+test_job:
+  stage: test-jar
+  image: ${BUILD_AND_TEST_IMAGE}
+  script:
+    - ls -lah
+    - echo "Running tests..."
+    - mvn test # Run unit and integration tests
+  rules:
+    -  if: '$CI_COMMIT_TAG'
+
      
    
 
