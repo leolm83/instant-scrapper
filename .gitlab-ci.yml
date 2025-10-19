@@ -58,6 +58,7 @@ test_job:
   image: ${BUILD_AND_TEST_IMAGE}
   script:
     - ls -lah
+    - ls ./target
     - echo "Running tests..."
     - mvn test # Run unit and integration tests
   rules:
