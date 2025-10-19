@@ -54,7 +54,7 @@ build-image:
   rules:
     -  if: '$CI_COMMIT_TAG'
   dependencies:
-    - build_jar_job
+    - build-jar
      
    
 
