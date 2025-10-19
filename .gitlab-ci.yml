@@ -49,7 +49,7 @@ build-image:
     - docker info
   stage: build-image
   script:
-    - docker build -f ./docker/Dockerfile -t "${PROJECT_DOCKER_IMAGE}" .
+    - docker build --build-arg PROJECT_JAR_NAME=${PROJECT_JAR_NAME} -f ./docker/Dockerfile -t "${PROJECT_DOCKER_IMAGE}" .
     - docker run "${PROJECT_DOCKER_IMAGE}"
   rules:
     -  if: '$CI_COMMIT_TAG'
