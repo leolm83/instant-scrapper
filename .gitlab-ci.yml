@@ -16,7 +16,7 @@ variables:
   PROJECT_NAME: "instant-gaming-scrapper"
   PROJECT_VERSION: 0.0.1-SNAPSHOT
   PROJECT_JAR_NAME: "${PROJECT_NAME}${PROJECT_VERSION}.jar"
-  PROJECT_DOCKER_IMAGE: "${PROJECT_NAME}${PROJECT_VERSION}"
+  PROJECT_DOCKER_IMAGE: "${PROJECT_NAME}:${CI_COMMIT_TAG}"
   BUILD_AND_TEST_IMAGE: "maven:3.9.11-eclipse-temurin-$PROJECT_JAVA_VERSION-alpine"
   DOCKER_HOST: "unix:///var/run/docker.sock"
   # MAVEN_CLI_OPTS: "-s .m2/settings.xml --batch-mode"
